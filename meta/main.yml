@@ -1,0 +1,20 @@
+galaxy_info:
+  author: Raman Sailopal
+  description: Allows the installation of Python liraries for connection to Intersystems Cache via M Gateway's connection service
+
+  license: MIT
+
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: SLES
+      versions:
+      - all
+
+  galaxy_tags:
+    - intersystems
+    - database
+    - python
+    - cache
+
+dependencies: []
