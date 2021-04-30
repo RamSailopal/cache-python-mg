@@ -26,7 +26,7 @@
     - python-devel
     - gcc
     - make
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu' 
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 - name: clone the node service gateway git repo
   git:
     repo: https://github.com/chrisemunt/mg_python.git
