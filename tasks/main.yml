@@ -7,6 +7,7 @@
   loop:
     - python-devel
     - gcc
+    - make
   when: ansible_distribution is search("SUSE")
 - name: Make sure that python-devel and gcc are installed
   yum:
@@ -15,7 +16,17 @@
   loop:
     - python-devel
     - gcc
-  when: ansible_distribution is not search("SUSE")
+    - make
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+- name: Make sure that python-devel and gcc are installed
+  apt:
+   name: "{{ item }}"
+   state: "present"
+  loop:
+    - python-devel
+    - gcc
+    - make
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu' 
 - name: clone the node service gateway git repo
   git:
     repo: https://github.com/chrisemunt/mg_python.git
